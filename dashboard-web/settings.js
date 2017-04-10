@@ -1,4 +1,12 @@
-firebaseConfig = require('../firebaseConfig')
+// TODO: add require.js to abstract firebase config object into one file to be referenced later
+// firebaseConfig = require('../firebaseConfig')
+firebaseConfig = {
+  "apiKey": "AIzaSyDEHc7ws4S0JeV2HuDvMMjTFqbO-TDkgd8",
+  "authDomain": "home-dashboard-9604a.firebaseapp.com",
+  "databaseURL": "https://home-dashboard-9604a.firebaseio.com",
+  "storageBucket": "home-dashboard-9604a.appspot.com"
+}
+
 USER_ID = null;
 USER_PROFILE = null;
 currentScannerId = null;
@@ -409,7 +417,7 @@ function showDevice(macAddress) {
 function initAuth(callbackWhenLoggedin) {
   firebase.auth().onAuthStateChanged(function(user) {
     if ( ! user) {
-      window.location.href="/login.html";
+      window.location.href="./login.html";
     } else {
       USER_ID = user.uid;
 
